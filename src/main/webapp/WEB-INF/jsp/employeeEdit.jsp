@@ -35,65 +35,67 @@
 				<form:form id="form" action="/employee" method="post"
 					modelAttribute="employee">
 					<div class="row form-group">
-						<div class="offset-2 col-2 ">
+						<div class="offset-lg-2 col-lg-2 col-sm-12 ">
 							<label>Code <span class="red-star">*</span> :
 							</label>
 						</div>
-						<div class="col-5">
+						<div class="col-lg-5">
 							<input class="form-control" type="text" name="code"
 								value="${employee.code}" readonly>
 						</div>
 					</div>
 					<div class="row form-group">
-						<div class="offset-2 col-2 ">
+						<div class="offset-lg-2 col-lg-2 col-sm-12 ">
 							<label>Name <span class="red-star">*</span> :
 							</label>
 						</div>
-						<div class="col-5">
+						<div class="col-lg-5">
 							<input class="form-control" type="text" id="name" name="name"
 								value="${employee.name}">
 							<div id="nameError" class="invalid-feedback"></div>
 						</div>
 					</div>
 					<div class="row form-group">
-						<div class="offset-2 col-2 ">
+						<div class="offset-lg-2 col-lg-2 col-sm-12 ">
 							<label>Location <span class="red-star">*</span> :
 							</label>
 						</div>
-						<div class="col-5">
+						<div class="col-lg-5">
 							<textarea class="form-control" id="location" name="location"
 								rows="4" cols="10">${employee.location}</textarea>
 							<div id="locationError" class="invalid-feedback"></div>
 						</div>
 					</div>
 					<div class="row form-group">
-						<div class="offset-2 col-2 ">
+						<div class="offset-lg-2 col-lg-2 col-sm-12 ">
 							<label>Email <span class="red-star">*</span> :
 							</label>
 						</div>
-						<div class="col-5">
+						<div class="col-lg-5">
 							<input class="form-control" type="email" id="email" name="email"
 								value="${employee.email}">
 							<div id="emailError" class="invalid-feedback"></div>
 						</div>
 					</div>
 					<div class="row form-group">
-						<div class="offset-2 col-2 ">
+						<div class="offset-lg-2 col-lg-2 col-sm-12 ">
 							<label>Date Of Birth <span class="red-star">*</span> :
 							</label>
 						</div>
-						<div class="col-5">
+						<div class="col-lg-5">
 							<input class="form-control" type="date" id="date"
 								name="dateOfBirth" value="${employee.dateOfBirth}">
 							<div id="dateError" class="invalid-feedback"></div>
 						</div>
 					</div>
-					<div class="row form-group pt-3">
-						<div class="offset-2 col-2 ">
-							<button class="btn btn-primary px-5" type="submit">Submit</button>
+					<div class="row">
+						<div class="col-lg-4 offset-lg-4 form-group col-sm-12 ">
+							<button class="btn btn-primary px-5 " type="submit">Submit</button>
+						</div>
+						<div class="col-lg-4 col-sm-12">
+							<button class="btn btn-warning " onClick="history.go(-1);">Cancel</button>
 						</div>
 					</div>
-
 					<br>
 
 				</form:form>
