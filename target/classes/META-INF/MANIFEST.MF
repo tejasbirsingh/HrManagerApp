@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: Client
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: tejasrekhi
+Implementation-Vendor-Id: com.nagarro
+Build-Jdk: 1.8.0_291
+Implementation-URL: https://spring.io/projects/spring-boot/Client
+Created-By: Maven Integration for Eclipse
+
