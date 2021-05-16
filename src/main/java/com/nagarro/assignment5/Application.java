@@ -4,6 +4,7 @@ import java.util.Collections;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
@@ -14,6 +15,11 @@ public class Application extends SpringBootServletInitializer {
 	// this will run the web app at 8081 port :- http://local:8081/
 	application.setDefaultProperties(Collections.singletonMap("server.port", "8081"));
 	application.run(args);
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+	return builder.sources(Application.class);
     }
 
 }
