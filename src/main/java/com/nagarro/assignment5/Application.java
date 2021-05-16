@@ -2,6 +2,7 @@ package com.nagarro.assignment5;
 
 import java.util.Collections;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -19,7 +20,8 @@ public class Application extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-	return builder.sources(Application.class);
+	return builder.sources(Application.class).bannerMode(Banner.Mode.OFF);
     }
+
 
 }
