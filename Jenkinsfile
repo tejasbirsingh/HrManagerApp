@@ -34,8 +34,7 @@ pipeline {
         }
        stage('Deploy on Tomcat'){
        		steps{
-       		deploy adapters: [tomcat9(credentialsId: '1f9a05f6-e5a4-473f-ad2c-5eb89830c861', path: '', url: 'http://localhost:9999/')], contextPath: 'app', war: '**/target/*.war'
-       		}
+        echo "mvn spring-boot:run" | at now + 1 minutes       		}
        }
     
     }
