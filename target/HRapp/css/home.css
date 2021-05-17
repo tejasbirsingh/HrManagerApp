@@ -1,0 +1,150 @@
+body {
+    background-color: #dee9ff;
+}
+
+.fieldset-custom {
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+}
+
+.legend-custom {
+    width: auto;
+    padding: 20px;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+.mini-footer {
+    background-image: linear-gradient(#c5edf4, #f5d6e5);
+    text-align: center;
+    padding: 12px 0;
+}
+
+.mini-footer p {
+    margin: 0;
+    line-height: 26px;
+    font-size: 15px;
+    color: #999;
+}
+
+.mini-footer p a {
+    color: #5867dd;
+}
+
+.mini-footer p a:hover {
+    color: #34bfa3;
+}
+
+.header-h2 {
+    margin: 0;
+    line-height: 26px;
+    font-size: 20px;
+    color: #999;
+}
+
+table {
+    margin-top: 15px;
+    width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+td,
+th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+    background: #b0ffff;
+    color: black;
+    border: 1px solid black;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #ccc;
+    }
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    td:nth-of-type(1):before {
+        content: "S.No.";
+    }
+    td:nth-of-type(2):before {
+        content: "Code";
+    }
+    td:nth-of-type(3):before {
+        content: "Name";
+    }
+    td:nth-of-type(4):before {
+        content: "Location";
+    }
+    td:nth-of-type(5):before {
+        content: "Email";
+    }
+    td:nth-of-type(6):before {
+        content: "Date Of Birth";
+    }
+    td:nth-of-type(7):before {
+        content: "Action";
+    }
+}
