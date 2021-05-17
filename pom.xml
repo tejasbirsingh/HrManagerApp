@@ -96,7 +96,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>HRapp</finalName>
+		<finalName>app</finalName>
 
 	</build>
 	<repositories>
