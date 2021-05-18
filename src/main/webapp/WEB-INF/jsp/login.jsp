@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,7 +15,7 @@
             <form id="form" method="POST" action="/login">
                 <div class="text-center pb-2"><h2>HR Management App</h2></div>
                 <div class="form-icon">
-                    <span><i class="icon icon-user"></i></span>
+                    <span><em class="icon icon-user"></em></span>
                 </div>
                 <c:import url="./notification.jsp"></c:import>
                 <div class="form-group">
