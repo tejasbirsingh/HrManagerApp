@@ -53,13 +53,12 @@ public class ExcelExporter {
 
 	for (Employee employee : employees) {
 	    Row row = sheet.createRow(currRow++);
-	    int columnCount = 0;
 
-	    createCell(row, columnCount++, employee.getCode(), style);
-	    createCell(row, columnCount++, employee.getName(), style);
-	    createCell(row, columnCount++, employee.getLocation(), style);
-	    createCell(row, columnCount++, employee.getEmail(), style);
-	    createCell(row, columnCount++, employee.getDateOfBirth(), style);
+	    createCell(row, 0, employee.getCode(), style);
+	    createCell(row, 1, employee.getName(), style);
+	    createCell(row, 2, employee.getLocation(), style);
+	    createCell(row, 3, employee.getEmail(), style);
+	    createCell(row, 4, employee.getDateOfBirth(), style);
 
 	}
     }

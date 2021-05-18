@@ -13,7 +13,7 @@ public class MyUserDetails implements UserDetails {
 
 	private static final long serialVersionUID = -1943301349246394521L;
 
-	private User user;
+	private transient User user;
  
 	public MyUserDetails(User user) {
 		this.user = user;

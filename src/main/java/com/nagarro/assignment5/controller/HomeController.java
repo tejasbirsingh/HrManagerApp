@@ -6,8 +6,7 @@ import java.util.Map;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nagarro.assignment5.dto.Employee;
@@ -24,7 +23,7 @@ public class HomeController {
 
     // this method checks if the user is authenticated and then returns the home
     // page
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @GetMapping(value = "/home")
     public ModelAndView getHome(Map<String, Object> model) {
 
 	Authentication auth = SecurityContextHolder.getContext().getAuthentication();

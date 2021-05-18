@@ -60,16 +60,16 @@
 				<h3 class="font-weight-bold mt-4 mb-4 font-size-25px">Employees
 					Table</h3>
 				<div class="row ">
-					<table>
+					<table summary="This table shows the list of the employees">
 						<thead>
 							<tr>
-								<th>S.No.</th>
-								<th>Code</th>
-								<th>Name</th>
-								<th>Location</th>
-								<th>Email</th>
-								<th>Date Of Birth</th>
-								<th>Action</th>
+								<th scope="row">S.No.</th>
+								<th scope="row">Code</th>
+								<th scope="row">Name</th>
+								<th scope="row">Location</th>
+								<th scope="row">Email</th>
+								<th scope="row">Date Of Birth</th>
+								<th scope="row">Action</th>
 							</tr>
 						</thead>
 						<c:forEach items="${employees}" var="employee" varStatus="loop">

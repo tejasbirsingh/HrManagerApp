@@ -28,7 +28,7 @@ public class HrManagerServiceImpl implements HrManagerService {
     // url for access the api for employee DB management
     @Value("${api.base.url}")
     private String baseUrl;
-
+    final String HRName = "hrName";
     private final RestTemplate restTemplate;
 
     public HrManagerServiceImpl(RestTemplate restTemplate) {
@@ -40,8 +40,8 @@ public class HrManagerServiceImpl implements HrManagerService {
 	Employee employee = null;
 	try {
 	    String url = baseUrl + "/hr/{hrName}/employee/{code}";
-	    Map<String, String> vars = new HashMap<String, String>();
-	    vars.put("hrName", hrName);
+	    Map<String, String> vars = new HashMap<>();
+	    vars.put(HRName, hrName);
 	    vars.put("code", code);
 	    employee = restTemplate.getForObject(url, Employee.class, vars);
 	} catch (Exception e) {
@@ -54,7 +54,7 @@ public class HrManagerServiceImpl implements HrManagerService {
     public void updateEmployeeByNameAndCode(String hrName, String code, Employee newEmployee) {
 	try {
 	    String url = baseUrl + "/hr/{username}/employee/{code}";
-	    Map<String, String> vars = new HashMap<String, String>();
+	    Map<String, String> vars = new HashMap<>();
 	    vars.put("username", hrName);
 	    vars.put("code", String.valueOf(newEmployee.getCode()));
 	    restTemplate.put(url, newEmployee, vars);
@@ -71,8 +71,8 @@ public class HrManagerServiceImpl implements HrManagerService {
 		employees = ExcelHelper.excelToEmployees(file.getInputStream());
 	    }
 	    String url = baseUrl + "/hr/{hrName}/employees";
-	    Map<String, String> vars = new HashMap<String, String>();
-	    vars.put("hrName", hrName);
+	    Map<String, String> vars = new HashMap<>();
+	    vars.put(HRName, hrName);
 	    restTemplate.postForObject(url, employees, Object.class, vars);
 	} catch (Exception e) {
 	    System.err.println("Employees not added!");
@@ -84,8 +84,8 @@ public class HrManagerServiceImpl implements HrManagerService {
     public void sendXmlToUserByName(String hrName, HttpServletResponse response) {
 	try {
 	    String url = baseUrl + "/hr/{hrName}/employee";
-	    Map<String, String> vars = new HashMap<String, String>();
-	    vars.put("hrName", hrName);
+	    Map<String, String> vars = new HashMap<>();
+	    vars.put(HRName, hrName);
 	    ResponseEntity<List<Employee>> responseEntity = restTemplate.exchange(url, HttpMethod.GET, null,
 		    new ParameterizedTypeReference<List<Employee>>() {
 		    }, vars);
@@ -112,8 +112,8 @@ public class HrManagerServiceImpl implements HrManagerService {
 	List<Employee> employees = new ArrayList<>();
 	try {
 	    String url = baseUrl + "/hr/{hrName}/employee";
-	    Map<String, String> vars = new HashMap<String, String>();
-	    vars.put("hrName", hrName);
+	    Map<String, String> vars = new HashMap<>();
+	    vars.put(HRName, hrName);
 
 	    ResponseEntity<List<Employee>> responseEntity = restTemplate.exchange(url, HttpMethod.GET, null,
 		    new ParameterizedTypeReference<List<Employee>>() {

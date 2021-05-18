@@ -15,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.nagarro.assignment5.dto.Employee;
+import com.nagarro.assignment5.exceptions.CustomException;
 
 public class ExcelHelper {
 
@@ -27,13 +28,11 @@ public class ExcelHelper {
 
     // returns true if file is valid format else returns false
     public static boolean hasExcelFormat(MultipartFile file) {
-	if (!TYPE.equals(file.getContentType())) {
-	    return false;
-	}
-	return true;
+
+	return TYPE.equals(file.getContentType());
     }
 
-    public static List<Employee> excelToEmployees(InputStream is) {
+    public static List<Employee> excelToEmployees(InputStream is) throws CustomException {
 	try (Workbook workbook = new XSSFWorkbook(is);) {
 
 	    Sheet sheet = workbook.getSheet(SHEET);
@@ -60,11 +59,7 @@ public class ExcelHelper {
 		    Cell currentCell = cellsInRow.next(); // iterate over columns
 		    switch (cellIndex) {
 		    case 0:
-			try {
-			    employee.setCode((long) currentCell.getNumericCellValue());
-			} catch (Exception e) {
-			    employee.setCode(Long.parseLong(currentCell.getStringCellValue()));
-			}
+			setEmployeeCode(employee, currentCell);
 			break;
 
 		    case 1:
@@ -93,7 +88,15 @@ public class ExcelHelper {
 	    return employees;
 
 	} catch (IOException e) {
-	    throw new RuntimeException("Failed to parse CSV file: " + e.getMessage());
+	    throw new CustomException("Failed to parse CSV file: " + e.getMessage());
+	}
+    }
+
+    static void setEmployeeCode(Employee employee, Cell currentCell) {
+	try {
+	    employee.setCode((long) currentCell.getNumericCellValue());
+	} catch (Exception e) {
+	    employee.setCode(Long.parseLong(currentCell.getStringCellValue()));
 	}
     }
 }
