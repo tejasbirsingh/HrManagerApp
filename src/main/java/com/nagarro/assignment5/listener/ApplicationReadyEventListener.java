@@ -43,7 +43,7 @@ public class ApplicationReadyEventListener implements ApplicationListener<Applic
 	user3.setEnabled(false);
 	userRepository.saveAndFlush(user3);
 
-	System.out.println("Started HR management Web App at:- http://local:8081");
+	System.out.println("Started HR management Web App at:- http://localhost:8081");
     }
 
 }
