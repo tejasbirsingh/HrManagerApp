@@ -18,6 +18,7 @@ import com.nagarro.assignment5.service.UserDetailsServiceImpl;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
+    @Override
     public UserDetailsService userDetailsService() {
 	return new UserDetailsServiceImpl();
     }
