@@ -8,7 +8,7 @@
         <title>Login</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/css/login.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css" />
     </head>
     <body>
         <div class="registration-form">
